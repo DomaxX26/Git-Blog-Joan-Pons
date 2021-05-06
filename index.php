@@ -11,7 +11,7 @@ $loggedUser = $_SESSION["user"] ?? "";
     //TODO: Esperrem més d'un registre
     $rows = $stmt->fetchAll();
 
-    var_dump($rows); //Mostrem l'array per comprovar que tenim dades
+    //var_dump($rows); //Mostrem l'array per comprovar que tenim dades
 ?>
 <html>
 <head>

@@ -29,14 +29,21 @@ if (empty($loggedUser)){
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
-<h2><?=$article["titart"]?></h2>
 <!--TODO: Comprovar que l'article existeix //-->
+<?php if(empty($article)) : ?>
+      <p>No hi ha ningun article</p>
+
+
+<?php  else:?>  
+
+<h2><?=$article["titart"]?></h2>
 <!--TODO: Si existeix caldrà mostrar les dades obtingudes de la base de dades //-->
 <p>La versió 12 de PHP es publicarà en tercer quart de 2023. Contindrà un sistema d'intel·ligència artifical que
 escriurà els programes per tu.</p>
 <p>Publicat per <strong><?=$article["codusu"]?></strong> en la categoria <strong><?=$article["codcat"]?></strong> el <strong><?=$article["datart"]?></strong></p>
 <p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <hr>
+<?php endif; ?>
 <a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
 </body>
 </html>
