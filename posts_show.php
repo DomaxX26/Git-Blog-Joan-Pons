@@ -14,7 +14,9 @@ if (empty($loggedUser)){
  $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
- $stmt = $pdo->prepare("SELECT * FROM article WHERE codart=:codi");
+ $stmt = $pdo->prepare("SELECT article.*, categoria.nomcat, usuari.nomusu FROM article INNER JOIN categoria 
+                        ON article.codcat = categoria.codcat INNER JOIN usuari 
+                        ON article.codusu = usuari.codusu WHERE article.codart=:codi");
  $stmt ->bindValue("codi", $id);
  $stmt->execute();
 
@@ -38,9 +40,8 @@ if (empty($loggedUser)){
 
 <h2><?=$article["titart"]?></h2>
 <!--TODO: Si existeix caldrà mostrar les dades obtingudes de la base de dades //-->
-<p>La versió 12 de PHP es publicarà en tercer quart de 2023. Contindrà un sistema d'intel·ligència artifical que
-escriurà els programes per tu.</p>
-<p>Publicat per <strong><?=$article["codusu"]?></strong> en la categoria <strong><?=$article["codcat"]?></strong> el <strong><?=$article["datart"]?></strong></p>
+<p><?=$article["bodyart"]?></p>
+<p>Publicat per <strong><?=$article["nomusu"]?></strong> en la categoria <strong><?=$article["nomcat"]?></strong> el <strong><?=$article["datart"]?></strong></p>
 <p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <hr>
 <?php endif; ?>
