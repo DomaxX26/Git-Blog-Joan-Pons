@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
         $authenticatedUser = true;
 
         // creem una variable de sessió anomenada user
-        $_SESSION["user"] = "admin";
+        $_SESSION["user"] = $row["codusu"];
     } else {
         $error = "Login error";
     }
