@@ -5,7 +5,7 @@ $loggedUser = $_SESSION["user"] ?? "";
     $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // TODO: Implementar la consulta
-    $stmt = $pdo->prepare("SELECT * FROM article ORDER BY datart DESC");
+    $stmt = $pdo->prepare("SELECT * FROM article INNER JOIN categoria ON article.codcat = categoria.codcat INNER JOIN usuari ON usuari.codusu = article.codusu  ORDER BY datart DESC");
     $stmt->execute();
     
     //TODO: Esperrem més d'un registre
@@ -26,11 +26,13 @@ $loggedUser = $_SESSION["user"] ?? "";
         <ul>
             <?php foreach($rows as $row) : ?>
                 <li>
-                    <a href="posts_show.php?id=<?=$row["codart"]?>"><?=$row["titart"]?></a> by User 1 from the Category 1
+                    <a href="posts_show.php?id=<?=$row["codart"]?>"><?=$row["titart"]?></a> by <strong><?=$row["nomusu"]?></strong> from <strong><?=$row["nomcat"]?></strong>
                 </li>
             <?php endforeach; ?>
         </ul>
         <p>Clic to <a href="posts_add.php">add</a> a posting.</p>
     <?php endif; ?>
+<hr>
+<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
 </body>
 </html>

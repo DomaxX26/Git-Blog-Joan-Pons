@@ -22,14 +22,16 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 <h1>Welcome to Coffee Talk Blog</h1>
 <!--TODO: Show posts -->
 
-    <h2>Publicat per <?=$articles["nomusu"]?></h2>
-
-<ul>
+    <h2>Publicat per <?=$articles[0]["nomusu"]?></h2>
+    
+        <ul>
             <?php foreach($articles as $article) : ?>
                 <li>
                     <a href="posts_show.php?id=<?=$article["codart"]?>"><?=$article["titart"]?></a> from the <?=$article["nomcat"]?>
                 </li>
             <?php endforeach; ?>
         </ul>
+<hr>
+<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
 </body>
 </html>

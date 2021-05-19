@@ -20,13 +20,15 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
-
-<?php foreach($artcategories as $catarticle) : ?>
-        <ul>
+<h2>En la Categoria <?=$artcategories[0]["nomcat"]?></h2>
+    <ul>
+        <?php foreach($artcategories as $catarticle) : ?>
             <li>
-               <a href="posts_show.php?id=<?=$catarticle["codart"]?>"><?=$catarticle["titart"]?></a> from the <?=$catarticle["nomusu"]?>
-         </li>
-      </ul>
-<?php endforeach; ?>
+               <a href="posts_show.php?id=<?=$catarticle["codcat"]?>"><?=$catarticle["titart"]?></a> from the <?=$catarticle["nomusu"]?>
+            </li>
+         <?php endforeach; ?>
+    </ul>
+<hr>
+<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
 </body>
 </html>
