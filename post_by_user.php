@@ -31,7 +31,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 </li>
             <?php endforeach; ?>
         </ul>
-<hr>
-<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
+
+<?php require("footer.php") ?>
 </body>
 </html>

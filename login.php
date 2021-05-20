@@ -75,7 +75,8 @@ else {
     <input type="submit" value="login">
 </form>
 <?php endif ;?>
-<hr>
-<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
+
+<?php require("footer.php") ?>
+
 </body>
 </html>

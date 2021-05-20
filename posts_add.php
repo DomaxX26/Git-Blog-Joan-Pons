@@ -106,8 +106,8 @@ $isPost = false;
 <?php endif;?>
 <!--TODO: 2.3.3. Mostrar missatge de confirmació //-->
 <p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
-<hr>
 <?php endif;?>
-<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
+
+<?php require("footer.php") ?>
 </body>
 </html>

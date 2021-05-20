@@ -32,7 +32,7 @@ $loggedUser = $_SESSION["user"] ?? "";
         </ul>
         <p>Clic to <a href="posts_add.php">add</a> a posting.</p>
     <?php endif; ?>
-<hr>
-<a href='index.php'>Home</a> || <a href='logout.php'>Logout</a>
+
+<?php require("footer.php") ?>
 </body>
 </html>
