@@ -30,9 +30,9 @@ header('Content-type: text/xml; charset="unicode-UTF-8"', true);
  <item>
   <title><?=$data["titart"]?></title>
   <description><?=$data["bodyart"]?></description>
-  <link>http://localhost:8080/blog/post/1</link>
+  <link>http://localhost:8080/posts_show.php?id=<?=$data["codart"]?></link>
   <guid isPermaLink="false">7bd204c6-1655-4c27-aeee-53f933c5395f</guid>
-  <pubDate><?=$data["datart"]?></pubDate>
+  <pubDate><?=date("D, d M Y H:i:s T", $timestampDate = strtotime($data["datart"]))?></pubDate>
  </item>
  <?php endforeach; ?>
 </channel>

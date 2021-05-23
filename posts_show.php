@@ -43,6 +43,29 @@ if (empty($loggedUser)){
 <p><?=$article["bodyart"]?></p>
 <p>Publicat per <strong><a href='post_by_user.php?id=<?=$article["codusu"]?>'><?=$article["nomusu"]?></a></strong> en la categoria <strong><a href='posts_by_category.php?id=<?=$article["codcat"]?>'><?=$article["nomcat"]?></a></strong> el <strong><?=$article["datart"]?></strong></p>
 <p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
+<table>
+<tr>
+   <td>
+      <form method="GET" action="posts_edit.php">
+      <input type="SUBMIT" value="Edit">
+      </form>
+   </td>
+
+   <td>
+      <form method="GET" action="posts_delete.php">
+      <input type="SUBMIT" value="Delete">
+      </form>
+   </td>
+
+   <td>
+      <form method="GET" action="comments_add.php">
+      <input type="SUBMIT" value="Add a comment">
+      </form>
+   </td>
+</tr>
+</table>
+</TR>
+</TABLE>
 <?php endif; ?>
 
 <?php require("footer.php") ?>
