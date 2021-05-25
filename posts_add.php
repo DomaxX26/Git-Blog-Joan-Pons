@@ -70,6 +70,8 @@ $isPost = false;
         $categories = $stmt ->fetchAll();
     }
    
+
+
    
 ?>
 
@@ -105,7 +107,7 @@ $isPost = false;
     <p>No s'ha creat el post</p> 
 <?php endif;?>
 <!--TODO: 2.3.3. Mostrar missatge de confirmació //-->
-<p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
+<p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php?id=<?=$article['codart']?>'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php endif;?>
 
 <?php require("footer.php") ?>

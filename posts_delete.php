@@ -50,11 +50,14 @@ $article = $stmt->fetch();
 
                         <p>S'ha eliminat el article correctament.</p>
                     <?php endif; ?>
+                    
                 <?php endif; ?>
                 <?php if (isset($_POST["no"])) : ?>
                     <p>No s'ha borrat el article</p>
                 <?php endif; ?>
             <?php endif; ?>
+            <a href="http://localhost:8080/index.php">Torna al index</a>
+
         <?php endif; ?>
 
     </form>
