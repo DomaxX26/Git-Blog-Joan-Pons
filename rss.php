@@ -10,6 +10,8 @@ $stmt->execute();
 
 $dataset = $stmt-> fetchAll();
 
+date_default_timezone_set("Europe/Paris");
+
 //Indicarem a php que el que estem fent es per a crear un arxiu XML
 header('Content-type: text/xml; charset="unicode-UTF-8"', true);
 
@@ -23,16 +25,16 @@ header('Content-type: text/xml; charset="unicode-UTF-8"', true);
  <description>Este el RSS de la pagina web de Joan</description>
  <link>http://localhost:8080/</link>
  <copyright>Tito Bambino. DomaxX26. xD  </copyright>
- <lastBuildDate><?=date("r")?></lastBuildDate>
- <pubDate><?=date("D, d M Y H:i:s T")?></pubDate>
+ <lastBuildDate><?=date(DATE_RFC822)?></lastBuildDate>
+ <pubDate><?=date(DATE_RFC822)?></pubDate>
  <ttl>1800</ttl>
 <?php foreach ($dataset as $data) : ?>
  <item>
   <title><?=$data["titart"]?></title>
   <description><?=$data["bodyart"]?></description>
   <link>http://localhost:8080/posts_show.php?id=<?=$data["codart"]?></link>
-  <guid isPermaLink="false">7bd204c6-1655-4c27-aeee-53f933c5395f</guid>
-  <pubDate><?=date("D, d M Y H:i:s T", $timestampDate = strtotime($data["datart"]))?></pubDate>
+  <guid isPermaLink="false">http://localhost:8080/posts_show.php?id=<?=$data["codart"]?></guid>
+  <pubDate><?=date(DATE_RFC822 ,strtotime($data["datart"]))?></pubDate>
  </item>
  <?php endforeach; ?>
 </channel>
