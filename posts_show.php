@@ -64,8 +64,8 @@ if (empty($loggedUser)){
    </td>
 </tr>
 </table>
-</TR>
-</TABLE>
+</tr>
+</table>
 <?php endif; ?>
 
 <?php require("footer.php") ?>
