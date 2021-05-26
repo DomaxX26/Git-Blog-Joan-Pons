@@ -2,8 +2,7 @@
 session_start();
 $loggedUser = $_SESSION["user"] ?? "";
     // TODO: Implementar la connexió a la base de dades
-    $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    require("DOMDocument.php");
     // TODO: Implementar la consulta
     $stmt = $pdo->prepare("SELECT * FROM article INNER JOIN categoria ON article.codcat = categoria.codcat INNER JOIN usuari ON usuari.codusu = article.codusu  ORDER BY datart DESC");
     $stmt->execute();

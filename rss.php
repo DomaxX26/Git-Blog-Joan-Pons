@@ -1,8 +1,7 @@
 <?php 
 
 //Implementar la consulta
-$pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require("DOMDocument.php");
 
 //Fem la consulta
 $stmt = $pdo->prepare("SELECT * FROM article ORDER BY datart DESC LIMIT 5");

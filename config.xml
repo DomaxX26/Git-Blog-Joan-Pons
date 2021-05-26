@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <database>
+        <connection>
+            <host>mysql-server</host>
+            <dbname>coffee-talks</dbname>
+        </connection>
+        <username>root</username>
+        <password>secret</password>
+    </database>
+</settings>

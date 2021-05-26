@@ -36,8 +36,7 @@ $isPost = false;
         if($isValid === true){
 
             //Connexio amb la base de dades
-            $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require("DOMDocument.php");
 
             $codusu = $_SESSION["user"];
             $datart = date("Y-m-d");
@@ -55,8 +54,7 @@ $isPost = false;
         }
     
     }else{
-        $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require("DOMDocument.php");
 
         $stmt = $pdo->prepare("SELECT * FROM article WHERE codart=:codi");
 		$stmt->bindValue("codi", $id);
@@ -80,9 +78,9 @@ $isPost = false;
 
 		<!--TODO: 2.1. Mostrar formulari //-->
 		<form acction="post_add.php" method="post">
-			<p>Titol de l'article <input type="text" name="titart"></p>
+			<p>Titol de l'article <input type="text" name="titart" value="<?=$article['titart']?>"></p>
 			<p>Cos de l'article</p>
-			<textarea name="bodyart" rows="10" cols="45" placeholder="Introdueix el cos del article..."></textarea>		
+			<textarea name="bodyart" rows="10" cols="45" placeholder="Introdueix el cos del article..."><?=$article['bodyart']?></textarea>		
 			<p><input type="submit" value="Enviar"></p>
 		</form>
 	<?php else : ?>

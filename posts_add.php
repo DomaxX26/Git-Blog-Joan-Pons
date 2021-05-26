@@ -35,11 +35,11 @@ $isPost = false;
         }
 
         if($isValid === true){
-
-            //Connexio amb la base de dades
-            $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+            
+            //Conexió a la base de dades
+            require("DOMDocument.php");
+            
+            
             $codusu = $_SESSION["user"];
             $datart = date("Y-m-d");
 
@@ -61,8 +61,7 @@ $isPost = false;
     // TODO: 2.3. Comprovar si hi ha algún error de validació        
         // TODO: 2.3.2. Inserir en la base de dades
     }else{
-        $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require("DOMDocument.php");
 
         $stmt = $pdo -> prepare("SELECT * FROM categoria, article WHERE categoria.codcat = article.codcat");
         $stmt ->execute();
@@ -107,7 +106,7 @@ $isPost = false;
     <p>No s'ha creat el post</p> 
 <?php endif;?>
 <!--TODO: 2.3.3. Mostrar missatge de confirmació //-->
-<p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php?id=<?=$article['codart']?>'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
+<p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php endif;?>
 
 <?php require("footer.php") ?>

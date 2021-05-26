@@ -3,8 +3,7 @@
 // TODO: Obtenir l'id enviat pel query string
 $id = $_GET["id"]; 
 //Implementar la consulta
-$pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require("DOMDocument.php");
 
  $stmt = $pdo->prepare("SELECT * FROM article, categoria, usuari WHERE article.codcat = categoria.codcat AND article.codusu = usuari.codusu AND categoria.codcat=:codi ORDER BY datart DESC");
  $stmt ->bindValue("codi", $id);

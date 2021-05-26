@@ -13,12 +13,12 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
     $user = filter_input(INPUT_POST, "username");
     $password = filter_input(INPUT_POST, "password");
     // TODO: Implementar la connexió a la base de dades
-    $pdo = new PDO("mysql:host=mysql-server;dbname=coffee-talks;charset-utf8" , "root" , "secret");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    require("DOMDocument.php");
     // TODO: Implementar la consulta
     $stmt = $pdo->prepare("SELECT * FROM usuari WHERE userusu=:username");
     $stmt->bindValue('username', $user);
     $stmt->execute();
+    
 
     // comprove l'usuari i la contrasenya
     $row = $stmt->fetch();
