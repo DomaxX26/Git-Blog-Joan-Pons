@@ -55,7 +55,7 @@ else {
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
-
+<?php require("footer.php") ?>
 <?php if ($isFormSubmitted) : ?>
     <?php if (empty($error)) :?>
         <p>Login successful. Great to see you back <?=$fullname?></p>
@@ -75,8 +75,5 @@ else {
     <input type="submit" value="login">
 </form>
 <?php endif ;?>
-
-<?php require("footer.php") ?>
-
 </body>
 </html>

@@ -73,7 +73,7 @@ $isPost = false;
 
 <body>
 	<h1>Welcome to Coffee Talk Blog</h1>
-
+    <?php require("footer.php") ?>
 	<?php if ($isPost === false) : ?>
 
 		<!--TODO: 2.1. Mostrar formulari //-->
@@ -94,8 +94,6 @@ $isPost = false;
 		<?php endif; ?>
 
 	<?php endif; ?>
-
-	<?php require("footer.php") ?>
 </body>
 
 </html>

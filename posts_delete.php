@@ -60,8 +60,6 @@ $article = $stmt->fetch();
                 <p><input type="submit" name="si" value="SI"> <input type="submit" name="no" value="NO"></p>
             </form>
         <?php endif;?>
-
-
 </body>
 
 </html>

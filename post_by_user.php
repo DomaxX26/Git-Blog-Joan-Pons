@@ -19,6 +19,7 @@ require("DOMDocument.php");
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
+<?php require("footer.php") ?>
 <!--TODO: Show posts -->
 
     <h2>Publicat per <?=$articles[0]["nomusu"]?></h2>
@@ -30,7 +31,5 @@ require("DOMDocument.php");
                 </li>
             <?php endforeach; ?>
         </ul>
-
-<?php require("footer.php") ?>
 </body>
 </html>

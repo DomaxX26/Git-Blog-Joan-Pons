@@ -15,23 +15,27 @@ $loggedUser = $_SESSION["user"] ?? "";
 <html>
 <head>
     <title>Coffee Talk Blog</title>
+    <link rel="stylesheet" type="text/css" href="estils.css">
 </head>
 <body>
+    <div class="body">
     <h1>Welcome to Coffee Talk Blog</h1>
+    <?php require("footer.php")?>
     <?php if (empty($loggedUser)) :?>
     <p>Please <a href="login.php">login</a>.</p>
     <?php else :?>
     <!--TODO: Show posts -->
+    <div class="index">
         <ul>
             <?php foreach($rows as $row) : ?>
-                <li>
+                <li class="articulo">
                     <a href="posts_show.php?id=<?=$row["codart"]?>"><?=$row["titart"]?></a> by <strong><?=$row["nomusu"]?></strong> from <strong><?=$row["nomcat"]?></strong>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p>Clic to <a href="posts_add.php">add</a> a posting.</p>
+    </div>
+        <a class="boto" href="posts_add.php">Afegir</a>
     <?php endif; ?>
-
-<?php require("footer.php") ?>
+    </div>
 </body>
 </html>

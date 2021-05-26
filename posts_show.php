@@ -30,6 +30,7 @@ if (empty($loggedUser)){
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
+<?php require("footer.php") ?>
 <!--TODO: Comprovar que l'article existeix //-->
 <?php if(empty($article)) : ?>
       <p>No hi ha ningun article</p>
@@ -43,8 +44,5 @@ if (empty($loggedUser)){
 <p>Publicat per <strong><a href='post_by_user.php?id=<?=$article["codusu"]?>'><?=$article["nomusu"]?></a></strong> en la categoria <strong><a href='posts_by_category.php?id=<?=$article["codcat"]?>'><?=$article["nomcat"]?></a></strong> el <strong><?=$article["datart"]?></strong></p>
 <p><a href='posts_edit.php?id=<?=$article["codart"]?>'>Edit</a> || <a href='posts_delete.php?id=<?=$article["codart"]?>'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php endif; ?>
-
-<?php require("footer.php") ?>
-
 </body>
 </html>

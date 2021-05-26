@@ -80,7 +80,7 @@ $isPost = false;
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
-
+<?php require("footer.php") ?>
 <?php if($isPost === false): ?>
 
 <!--TODO: 2.1. Mostrar formulari //-->
@@ -109,6 +109,6 @@ $isPost = false;
 <p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php endif;?>
 
-<?php require("footer.php") ?>
+
 </body>
 </html>

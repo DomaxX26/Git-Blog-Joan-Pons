@@ -19,6 +19,7 @@ require("DOMDocument.php");
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
+<?php require("footer.php") ?>
 <h2>En la Categoria <?=$artcategories[0]["nomcat"]?></h2>
     <ul>
         <?php foreach($artcategories as $catarticle) : ?>
@@ -27,7 +28,5 @@ require("DOMDocument.php");
             </li>
          <?php endforeach; ?>
     </ul>
-
-<?php require("footer.php") ?>
 </body>
 </html>

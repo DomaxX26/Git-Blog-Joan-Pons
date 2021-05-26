@@ -1,0 +1,77 @@
+html{
+    background: #e8e8e8;
+}
+.body{
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.index{
+    background-color: #808080 ;
+    border: black 1px solid;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.articulo{
+    background-color: #b4b4b4;
+    border: black 1px solid;
+    margin-top: 5px;
+    padding: 1.1em;
+    list-style: none;
+    width: auto;
+}
+
+h1{
+    text-align: center;
+    margin-bottom:1.1em;
+}
+
+/*Menu*/
+#menu{
+    list-style: none;
+    padding: 0%;
+    background: #092327;
+    width: 100%;
+    max-width: 2000px;
+    margin: auto;
+}
+
+#menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+
+#menu li{
+    display: inline-block;
+    text-align: center;
+}
+
+#menu li a:hover{
+    background: #ef8354;
+}
+
+/*Botó de afegir article*/
+
+.boto{
+    font-size: 15px;
+    text-decoration: none;
+    margin: 10px 0px;
+    display: inline-block;
+    background: #3BA7E1;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 5px 0px #1D64A6;
+}
+
+.boto:hover{
+    box-shadow: 0px 2px 0px #1D64A6;
+}
+
+.boto:active{
+    box-shadow: none;
+}
