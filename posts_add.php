@@ -63,7 +63,7 @@ $isPost = false;
     }else{
         require("DOMDocument.php");
 
-        $stmt = $pdo -> prepare("SELECT * FROM categoria, article WHERE categoria.codcat = article.codcat");
+        $stmt = $pdo -> prepare("SELECT distinct * FROM categoria, article WHERE categoria.codcat = article.codcat");
         $stmt ->execute();
 
         $categories = $stmt ->fetchAll();

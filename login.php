@@ -52,6 +52,7 @@ else {
 <html>
 <head>
     <title>Coffee Talk Blog</title>
+    <link href="estils.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Welcome to Coffee Talk Blog</h1>
@@ -63,7 +64,7 @@ else {
         <p>Error:  <?=$error ?>. <a href="login.php">Try again</a></p>
     <?php endif; ?>
 <?php else :?>
-<form class="table" action="login.php" method="post">
+<form class="login" action="login.php" method="post">
     <div>
         <label>Username:</label>
         <input type="text" name="username" value=""/>
