@@ -63,7 +63,7 @@ $isPost = false;
     }else{
         require("DOMDocument.php");
 
-        $stmt = $pdo -> prepare("SELECT distinct * FROM categoria, article WHERE categoria.codcat = article.codcat");
+        $stmt = $pdo -> prepare("SELECT * FROM categoria ORDER BY nomcat DESC");  //SELECT * FROM categoria, article WHERE categoria.codcat = article.codcat ORDER BY nomcat DESC
         $stmt ->execute();
 
         $categories = $stmt ->fetchAll();
@@ -84,7 +84,7 @@ $isPost = false;
 <?php if($isPost === false): ?>
 
 <!--TODO: 2.1. Mostrar formulari //-->
-    <form acction="post_add.php" method="post">
+    <form class="posts_add" acction="post_add.php" method="post">
         <p>Titol de l'article <input type="text" name="titart"></p>
         <p>Cos de l'article</p>
         <textarea name="bodyart" rows="10" cols="45" placeholder="Introdueix el cos del article..."></textarea>

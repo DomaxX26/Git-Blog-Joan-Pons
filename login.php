@@ -27,20 +27,11 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
     }
     else{
         if($row["passusu"] == $password){
-            $authenticatedUser = true;
+                $_SESSION["user"] = $row["codusu"];
         }
-    }
-    // TODO: comprovar el resultat de la consulta
-    if ($user == "admin" && $password == "admin") {
-        $fullname = "Admin admin";
-
-        // s'ha autenticat correctament
-        $authenticatedUser = true;
-
-        // creem una variable de sessió anomenada user
-        $_SESSION["user"] = $row["codusu"];
-    } else {
-        $error = "Login error";
+        else{
+            $error = "Login error";
+        }
     }
 }
 // si no s'ha enviat ho indiquem
@@ -66,12 +57,12 @@ else {
 <?php else :?>
 <form class="login" action="login.php" method="post">
     <div>
-        <label>Username:</label>
+        <label>Username</label>
         <input type="text" name="username" value=""/>
     </div>
     <div>
-        <label>Password:</label>
-        <input type="text" name="password" value=""/>
+        <label>Password</label>
+        <input type="password" name="password" value=""/>
     </div>
     <input type="submit" value="login">
 </form>
