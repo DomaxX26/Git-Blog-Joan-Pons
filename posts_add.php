@@ -55,6 +55,7 @@ $isPost = false;
             $stmt ->bindValue("datart", $datart);
 
             $stmt ->execute();
+            $idNew = $pdo->lastInsertId();
         }
     // TODO: 2.2. Obtenir les dades del formulari
     // TODO: 2.3. Validar les dades
@@ -101,12 +102,11 @@ $isPost = false;
 <!--TODO: 2.3.1. Mostrar errors de validació //-->
 <?php if($isValid===true): ?>
     <p>S'han creat el post amb exit</p>
-
+    <p><a href='posts_edit.php?id=<?=$idNew?>'>Edit</a> || <a href='posts_delete.php?id=<?=$idNew?>'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php else : ?>
     <p>No s'ha creat el post</p> 
 <?php endif;?>
 <!--TODO: 2.3.3. Mostrar missatge de confirmació //-->
-<p><a href='posts_edit.php'>Edit</a> || <a href='posts_delete.php'>Delete</a> || <a href='comments_add.php'>Add a comment</a></p>
 <?php endif;?>
 
 
